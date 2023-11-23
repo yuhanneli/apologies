@@ -63,8 +63,7 @@
                     updateButtonLabels("Edi wow", "Okay po");
                     break;
                 case 7:
-                    
-                      apologyText.innerHTML = `
+                    apologyText.innerHTML = `
                       <img src="image-2.jpeg" width="100%" height="auto">
                       
                       <p>You are enough, Bb. More than you will ever know. You gave me more joy and love than I could have imagined. You gave me hope when I needed it most - a precious gift that no one else has been able to provide. That hope is something I wish to return to you tenfold. You are worth so much more than a random hangout or some silly tantrums. Your light shines brighter than you realize. Your efforts have not gone unnoticed or unappreciated. I noticed that you are taking actions when it comes to my pet peeves. Please don't tire yourself over me. You don't deserve to be treated that way. You have a kind soul, Eli. My heart drops whenever I feel just the mere touch of your hands. You are caring, thoughtful, and your beautiful soul nurtures mine. You are everything I could have wished for and more. Your soul fills me with optimism and faith that together we will continue to grow stronger. Every small act of kindness, each moment you stand by my side means the world. You deserve all the joy in the wrecked world. Always know that you will forever have my endless gratitude, affection and dedication.</p>
@@ -72,15 +71,12 @@
                       <img src="image-1.jpeg" width="100%" height="auto">
                       
                       <p>(Still my Favorite Picture of you)</p>
-                     
                     `;
                     
                     const images = document.querySelectorAll('img');
                     
                     images.forEach(image => {
-                    
                       image.addEventListener('click', () => {
-                    
                         if (image.width === 300) {
                           image.width = 500;
                           image.height = 350;
@@ -88,24 +84,15 @@
                           image.width = 300;
                           image.height = 200;
                         }
-                    
                       });
-                    
                     });
                     updateButtonLabels("I love you", "I love you!!!");
                     break;
-
-
                 default:
-                   
             }
-
             step++;
-
-            if (step > 10) {
-                document.querySelectorAll('button').forEach(button => button.style.display = 'none');
-            }
         }
     </script>
 </body>
 </html>
+
