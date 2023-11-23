@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #apology-text {
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>:((</h1>
+    <div id="apology-text">Hey, Honey.</div>
+    <button id="yesButton" onclick="nextStep('yes')">Hey</button>
+    <button id="noButton" onclick="nextStep('no')">Shutup</button>
+
+    <script>
+        let step = 1;
+
+        function updateButtonLabels(yesLabel, noLabel) {
+            document.getElementById('yesButton').textContent = yesLabel;
+            document.getElementById('noButton').textContent = noLabel;
+        }
+
+        function nextStep(response) {
+            const apologyText = document.getElementById('apology-text');
+
+            switch (step) {
+                case 1:
+                    apologyText.textContent = (response === 'yes') ? "I'm sorry for today" : "Rude>:( But I'm really sorry for today.";
+                    updateButtonLabels("It's Okay. Me strong ᕦ(ò_óˇ)ᕤ", "I'm Not Okay. I'm tired from everything.");
+                    break;
+                case 2:
+                    apologyText.textContent = (response === 'yes') ? "That's Great! I'm happy to hear that!:) But I'm still not proud of what I did. Is there something I could do to make you feel better?" : "I'm so sorry to hear that, honey. It hurts so much hearing that from you. Is there anything I could do to make up for what I did?";
+                    updateButtonLabels("Non, I can handle this on my own.", "Yes, I want to be alone.");
+                    break;
+                case 3:
+                    apologyText.textContent = (response === 'yes') ? "Anong on my own baliw, Na rerecord mga response mo rito. You'll never ne alone if I'm around." : ":(( I want to give you that, But I promised to be there for you at every moment.";
+                    updateButtonLabels("Kaya ko to, promise.", "Some promises can be broken if needed.");
+                    break;
+                case 4:
+                    apologyText.textContent = (response === 'yes') ? "I'm really sorry, Eli. It was never my intention to tire you out. I wanted to go there kasi I wanted to spend time with you and support you. And yet again, I end up exhausting you just because of my needs. I'm really Aware:( I'm sorry, honey." : "I'm really sorry, Eli. It was never my intention to tire you out. I wanted to go there kasi I wanted to spend time with you and support you. And yet again, I end up exhausting you just because of my needs. I'm really Aware:( I'm sorry, honey.";
+                    updateButtonLabels("I truly understand. I will give you the response at Google Keep.", "I need some time alone.");
+                    break;
+                case 5:
+                    apologyText.textContent = (response === 'yes') ? "Alright, I will be waiting for your response.:))" : "I understand, Baby. If it's more time you need, It's more time you shall get. You deserve a break anyways.";
+                    updateButtonLabels("I love you", "Thank you");
+                    break;
+                case 6:
+                    apologyText.textContent = (response === 'yes') ? "I love you too, Honey. More than you will ever know." : "No need for Thank you's, Just doing my job as a Boyfriend.";
+                    updateButtonLabels("Edi wow", "Okay po");
+                    break;
+                case 7:
+                    
+                      apologyText.innerHTML = `
+                      <img src="/sorry/image-2.jpeg" width="100%" height="auto">
+                      
+                      <p>You are enough, Bb. More than you will ever know. You gave me more joy and love than I could have imagined. You gave me hope when I needed it most - a precious gift that no one else has been able to provide. That hope is something I wish to return to you tenfold. You are worth so much more than a random hangout or some silly tantrums. Your light shines brighter than you realize. Your efforts have not gone unnoticed or unappreciated. I noticed that you are taking actions when it comes to my pet peeves. Please don't tire yourself over me. You don't deserve to be treated that way. You have a kind soul, Eli. My heart drops whenever I feel just the mere touch of your hands. You are caring, thoughtful, and your beautiful soul nurtures mine. You are everything I could have wished for and more. Your soul fills me with optimism and faith that together we will continue to grow stronger. Every small act of kindness, each moment you stand by my side means the world. You deserve all the joy in the wrecked world. Always know that you will forever have my endless gratitude, affection and dedication.</p>
+                      
+                      <img src="/sorry/image-1.jpeg" width="100%" height="auto">
+                      
+                      <p>(Still my Favorite Picture of you)</p>
+                     
+                    `;
+                    
+                    const images = document.querySelectorAll('img');
+                    
+                    images.forEach(image => {
+                    
+                      image.addEventListener('click', () => {
+                    
+                        if (image.width === 300) {
+                          image.width = 500;
+                          image.height = 350;
+                        } else {
+                          image.width = 300;
+                          image.height = 200;
+                        }
+                    
+                      });
+                    
+                    });
+                    updateButtonLabels("I love you", "I love you!!!");
+                    break;
+
+
+                default:
+                   
+            }
+
+            step++;
+
+            if (step > 10) {
+                document.querySelectorAll('button').forEach(button => button.style.display = 'none');
+            }
+        }
+    </script>
+</body>
+</html>
